@@ -71,5 +71,9 @@ let args =  messageArray.slice(1);
     
 });
 
+bot.on('guildMemberAdd', member => {
+   member.send("Welcome to the server!");
+});
+
 
 bot.login(process.env.BOT_TOKEN);
