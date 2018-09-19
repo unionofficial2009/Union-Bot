@@ -73,7 +73,7 @@ let args =  messageArray.slice(1);
 
 
 client.on("guildMemberAdd", (member) => {
-  member.user.sendMessage('hello!')
+  message.author.send("Your message here.")
  .then(message => console.log(`Sent message: ${message.content}`))
  .catch(console.error);
   
