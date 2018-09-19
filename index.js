@@ -71,4 +71,12 @@ let args =  messageArray.slice(1);
     
 });
 
+
+client.on("guildMemberAdd", (member) => {
+  member.user.sendMessage('hello!')
+ .then(message => console.log(`Sent message: ${message.content}`))
+ .catch(console.error);
+  
+});
+
 bot.login(process.env.BOT_TOKEN);
