@@ -11,18 +11,38 @@ bot.on("ready", async () => {
 });
 
 bot.on("message", async message => {
-if(message.author.bot) return;
+//if(message.author.bot) return;
 if(message.channel.type === "dm") return;
   
 let prefix = botconfig.prefix;
   
-  if(!message.content.startsWith(prefix)) return;
+if(!message.content.startsWith(prefix)) return;
 let messageArray = message.content.split(" ");
 let cmd = messageArray[0];
 let args =  messageArray.slice(1);
     
  if(cmd === `${prefix}present`){
-    let akmemberRole = message.guild.roles.find("name", "AK - Member");
+   
+   if (message.channel.id != 532176620526632960 && message.author.id != 421634731709562886) {
+     message.delete().catch(O_o=>{});
+     return message.reply("Invalid Channel! Please type ***present** here :arrow_right: <#532176620526632960>");
+   } 
+   
+   let today = new Date();
+   let newtoday = `${today.getMonth()+1}-${today.getDate()}-${today.getFullYear()}`;
+   let curHr = today.getHours();
+   let greetings = "";
+   let myattendance = 0;
+   
+   if (curHr < 12) {
+      greetings = 'Good Morning';
+   } else if (curHr < 18) {
+      greetings ='Good Afternoon';
+   } else {
+      greetings ='Good Evening';
+   }
+   
+   let akmemberRole = message.guild.roles.find("name", "AK - Member");
    if(message.member.roles.has(akmemberRole.id)) {
    if(cooldown.has(message.author.id)){
     message.delete();
