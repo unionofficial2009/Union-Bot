@@ -18,7 +18,7 @@ if (message.channel.id == 546665178079690752) {
    if (message.attachments.size == 0) {
       message.delete().catch(O_o=>{});
   }
-   
+   return;
 }  
 //if(message.author.bot) return;
 if(message.channel.type === "dm") return;
