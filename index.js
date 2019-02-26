@@ -27,7 +27,7 @@ let prefix = botconfig.prefix;
   
 if(!message.content.startsWith(prefix)) return;
 let messageArray = message.content.split(" ");
-let cmd = messageArray[0];
+let cmd = messageArray[0].toLowerCase();
 let args =  messageArray.slice(1);
     
  if(cmd === `${prefix}present`){
