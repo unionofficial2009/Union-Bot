@@ -6,7 +6,7 @@ let cdseconds = 86400;
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
-  bot.user.setActivity("*present for Attendance", {type: "WATCHING"});
+  bot.user.setActivity("!present for Attendance", {type: "WATCHING"});
   
 });
 
@@ -51,7 +51,7 @@ let args =  messageArray.slice(1);
       greetings ='Good Evening';
    }
    
-   let attendancechannel = message.guild.channels.find(`name`, "lm-attendance");
+   let attendancechannel = message.guild.channels.find(`name`, "ls-attendance");
    if (!attendancechannel) return message.channel.send("Couldn't find attendance channel.");
    
    attendancechannel.fetchMessages({ limit: 100 })
@@ -87,7 +87,7 @@ let args =  messageArray.slice(1);
              
         } else {
           
-         let romemberRole = message.guild.roles.find("name", "LM - Member"); 
+         let romemberRole = message.guild.roles.find("name", "LS - Member"); 
        
         if(message.member.roles.has(romemberRole.id)) {
            message.reply("You already have attendance for today.")  
@@ -119,16 +119,16 @@ let args =  messageArray.slice(1);
      .setThumbnail(bicon)
      .addField("Attendance", "Present")
      .setTimestamp()
-     .setFooter("UNION LM Attendance",bicon2);
+     .setFooter("UNION LS Attendance",bicon2);
      
-      let attendancechannel = message.guild.channels.find(`name`, "lm-attendance");
+      let attendancechannel = message.guild.channels.find(`name`, "ls-attendance");
       if (!attendancechannel) return message.channel.send("Couldn't find attendance channel.");
       
       attendancechannel.send(attendanceEmbed); 
                   
        } else {
          
-      let romemberRole = message.guild.roles.find("name", "LM - Member");  
+      let romemberRole = message.guild.roles.find("name", "LS - Member");  
       if(message.member.roles.has(romemberRole.id)) {
       
       message.reply(`${greetings} ${message.member.displayName}  :tada::hugging: !`);  
@@ -147,9 +147,9 @@ let args =  messageArray.slice(1);
      .setThumbnail(bicon)
      .addField("Attendance", "Present")
      .setTimestamp()
-     .setFooter("UNION LM Attendance",bicon2);
+     .setFooter("UNION LS Attendance",bicon2);
      
-     let attendancechannel = message.guild.channels.find(`name`, "lm-attendance");
+     let attendancechannel = message.guild.channels.find(`name`, "ls-attendance");
      if (!attendancechannel) return message.channel.send("Couldn't find attendance channel.");   
         
      attendancechannel.send(attendanceEmbed);   
