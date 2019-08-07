@@ -34,7 +34,7 @@ let args =  messageArray.slice(1);
    
    if (message.channel.id != 532176620526632960 && message.author.id != 421634731709562886) {
      message.delete().catch(O_o=>{});
-     return message.reply("Invalid Channel! Please type ***present** here :arrow_right: <#532176620526632960>");
+     return message.reply("Invalid Channel! Please type **!present** here :arrow_right: <#532176620526632960>");
    } 
    
    let today = new Date();
